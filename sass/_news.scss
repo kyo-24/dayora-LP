@@ -1,0 +1,123 @@
+@use "variable" as var;
+
+#news {
+  padding: 120px 0;
+  @include var.mq('sp') {
+    padding: 0 0 20px 0;
+  }
+}
+.news-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 5px 12px rgba(62, 62, 62, 0.2);
+  background: #fff;
+  padding: 60px 60px 40px 60px;
+  @include var.mq('sp') {
+    padding: 40px 0;
+    position: relative;
+    bottom: 40px;
+  }
+}
+.news-list {
+  margin-top: 60px;
+  @include var.mq('sp') {
+    margin-top: 30px;
+  }
+}
+.news-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border-top: 1px solid #CECDCD;
+  padding: 36px 0;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+
+  @include var.mq('sp') {
+    display: block;
+    padding: 12px 16px;
+  }
+  &:last-of-type {
+    border-bottom: 1px solid #CECDCD;
+  }
+
+  &:hover {
+    background-color: #4973FF1A;
+    transform: scale(1.05);
+  }
+  &::after {
+    cursor: pointer;
+    display: inline-block;
+    content: "";
+    width: 14px;
+    height: 23px;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    background: url(../img/news-arrow.png) no-repeat center center / contain;
+  }
+
+
+  dt {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    @include var.mq('sp') {
+      width: 100%;
+    }
+  }
+  dd {
+    width: calc(100% - 300px);
+    @include var.mq('sp') {
+      width: 100%;
+    }
+  }
+
+}
+.news-date {
+  font-family: var.$font-en;
+  font-size: 18px;
+  @include var.mq('sp') {
+    font-size: 14px;
+  }
+}
+.news-text {
+  font-size: 14px;
+  border: 2px solid var.$color-blue;
+  border-radius: 50px;
+  line-height: 1;
+  margin-left: 40px;
+  padding: 6px 30px;
+  @include var.mq('sp') {
+    font-size: 12px;
+    margin-left: 24px;
+    padding: 4px 16px;
+  }
+}
+.news-title {
+  padding-right: 83px;
+  position: relative;
+  font-size: 18px;
+  @include var.mq('sp') {
+    margin-top: 7px;
+    font-size: 14px;
+    padding-right: 40px;
+    line-height: (20 / 14);
+  }
+}
+
+.news-link {
+  margin-top: 48px;
+  text-align: center;
+  @include var.mq('sp') {
+    margin-top: 36px;
+  }
+  a {
+    padding: 20px 80px;
+    @include var.mq('sp') {
+      padding: 16px 100px;
+    }
+  }
+}

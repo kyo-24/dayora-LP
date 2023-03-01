@@ -1,0 +1,131 @@
+@use "variable" as var;
+
+#results {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.results-inner {
+  width: 97%;
+  background: var.$color-main;
+  padding: 60px 0 60px 60px;
+  @include var.mq('sp') {
+    padding: 40px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+.results-title {
+  text-align: left;
+  color: #fff;
+  @include var.mq('sp') {
+    text-align: center;
+  }
+}
+.results-link {
+  margin-top: 100px;
+  @include var.mq('sp') {
+    margin-top: 68px;
+  }
+  a {
+    width: 290px;
+    max-width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    @include var.mq('sp') {
+      padding: 16px 0;
+      width: 310px;
+    }
+  }
+}
+
+
+
+.results-item { 
+  width: 400px;
+  @include var.mq('sp') {
+    width: 274px;
+  }
+  img {
+    vertical-align: bottom;
+  }
+}
+.results-content {
+  background: #fff;
+  padding: 16px;
+  @include var.mq('sp') {
+    padding: 12px;
+    text-align: left;
+  }
+}
+.results-head {
+  font-size: 20px;
+  line-height: 1;
+  @include var.mq('sp') {
+    font-size: 14px;
+  }
+}
+.results-text {
+  margin-top: 14px;
+  @include var.mq('sp') {
+    font-size: 12px;
+    margin-top: 9px;
+    letter-spacing: 0.01px;
+  }
+}
+
+
+.swiper-container{
+  position: relative;
+  margin-top: 54px;
+  @include var.mq('sp') {
+    margin-top: 35px;
+    padding-left: 16px;
+  }
+}
+.swiper-pagination{
+  bottom: -60px!important;
+  text-align: left;
+  cursor: pointer;
+  @include var.mq('sp') {
+    bottom: -46px!important;
+    text-align: center;
+  }
+
+}
+.swiper-slide {
+  width: 400px;
+  @include var.mq('sp') {
+    width: 274px;
+  }
+}
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  opacity: 1;
+  position: relative;
+}
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 var(--swiper-pagination-bullet-horizontal-gap,0px);
+  margin-left: 20px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+.swiper-pagination-bullet-active {
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  left: 6px;
+}

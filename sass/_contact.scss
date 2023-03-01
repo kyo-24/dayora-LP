@@ -1,0 +1,328 @@
+@use "variable" as var;
+
+#contact {
+  background: url(../img/contact-bg.png) no-repeat center top / cover;
+  padding: 60px 0;
+  @include var.mq('sp') {
+    padding: 40px 0;
+  }
+}
+
+.contact-box {
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 12px;
+
+}
+.contact-head {
+  background: url(../img/contact1.png) no-repeat center center / cover;
+  text-align: center;
+  color: #fff;
+  padding: 58px 0;
+  border-radius: 12px 12px 0 0;
+  @include var.mq('sp') {
+    padding: 36px 16px;
+  }
+}
+.contact-subtitle {
+  margin-top: 4px;
+  @include var.mq('sp') {
+    text-align: left;
+    font-size: 14px;
+  }
+}
+.contact-body {
+  padding: 60px 120px;
+  background: #fff;
+  border-radius: 0 0 12px 12px;
+  @include var.mq('sp') {
+    padding: 40px 12px;
+  }
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  @include var.mq('sp') {
+    display: block;
+    height: auto;
+  }
+
+  & + & {
+    margin-top: 32px;
+  }
+
+  &:nth-child(5) {
+    margin-top: 20px;
+  }
+
+  &:first-of-type {
+    height: 40px;
+    @include var.mq('sp') {
+      height: auto;
+    }
+  }
+
+  &:last-of-type {
+    display: block;
+    height: auto;
+    margin-top: 26px;
+    dt {
+      width: 100%;
+    }
+    dd {
+      width: 100%;
+    }
+  }
+
+  dt {
+    width: 188px;
+    font-weight: bold;
+    @include var.mq('sp') {
+      width: 100%;
+    }
+  }
+  dd {
+    width: calc(100% - 188px);
+    @include var.mq('sp') {
+      width: 100%;
+    }
+  }
+}
+.contact-label {
+  line-height: 32px;
+  display: inline-block;
+  @include var.mq('sp') {
+    height: auto;
+    line-height: 16px;
+  }
+}
+.required {
+  position: relative;
+  &::after {
+    content: "必須";
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+    background: var.$color-red;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 16px;
+    border-radius: 2px;
+    line-height: 16px;
+    text-align: center;
+    margin-left: 12px;
+  }
+}
+.contact-kind {
+  display: inline-block;
+  position: relative;
+  @include var.mq('sp') {
+    width: 100%;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    width: 16px;
+    height: 10px;
+    background: url(../img/news-arrow.png) no-repeat center center / contain;
+    transform: rotate(90deg);
+    cursor: pointer;
+    @include var.mq('sp') {
+      top: 20px;
+    }
+  }
+}
+.contact-select {
+  border: 1px solid #707070;
+  line-height: 38px;
+  padding: 0 36px 0 12px;
+  position: relative;
+  cursor: pointer;
+  @include var.mq('sp') {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+.contact-input {
+  height: 32px;
+  border-bottom: 1px solid #707070;
+  width: 100%;
+  padding: 10px;
+  @include var.mq('sp') {
+    height: 20px;
+    padding-left: 0;
+    margin-top: 8px;
+  }
+}
+.contact-radio {
+  & + & {
+    margin-left: 34px;
+  }
+  span {
+    padding-left: 8px;
+    cursor: pointer;
+  }
+}
+
+.contact-radio-item {
+  height: 16px;
+  @include var.mq('sp') {
+    height: auto;
+    margin-top: 8px;
+  }
+}
+
+.contact-textbox {
+  width: 100%;
+  min-height: 200px;
+  border: 1px solid #707070;
+  vertical-align: bottom;
+  padding: 9px 11px;
+  @include var.mq('sp') {
+    margin-top: 16px;
+    min-height: 160px;
+  }
+}
+
+.check {
+  margin-top: 40px;
+  @include var.mq('sp') {
+    margin-top: 26px;
+  }
+}
+.contact-check {
+  display: none;
+  + span {
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 40px;
+    position: relative;
+    display: inline-block;
+    line-height: 18px;
+    &:hover::before {
+      border-color: #4973FF;
+      box-shadow: 0px 0px 5px rgba(73, 115, 255, 0.2);
+    }
+    @include var.mq('sp') {
+      font-size: 16px;
+      line-height: 16px;
+      padding-left: 38px;
+    }
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border: 1px solid #707070;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      @include var.mq('sp') {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &::after {
+      content: "";
+      width: 9px;
+      height: 16px;
+      border: 2px solid var.$color-blue;
+      position: absolute;
+      top: -2px;
+      left: 6px;
+      border-radius: 0;
+      opacity: 1;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-right-color: var.$color-blue;
+      border-bottom-color: var.$color-blue;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      background: transparent;
+      opacity: 0;
+      transition: opacity 0.3s ease 0s;
+      @include var.mq('sp') {
+        width: 8px;
+        height: 15px;
+        top: -3px;
+        left: 5px;
+      }
+    }
+  }
+
+  &:checked {
+    + span {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.submit {
+  margin-top: 38px;
+  @include var.mq('sp') {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+#js-submit {
+  &:disabled {
+    color: #fff;
+    background: #B2B2B2;
+    cursor: default;
+  }
+
+  &.-active {
+    color: #fff;
+    background-color: #FFAA3B;
+  }
+}
+
+.contact-message {
+  text-align: center;
+  margin-top: 60px;
+  display: none;
+
+  &.-error {
+    color: #f00;
+  }
+}
+
+input, textarea, select {
+  // padding: 16px;
+  @include var.mq('sp') {
+    font-size: 14px;
+  }
+}
+
+
+input[type="text"],
+input[type="email"] {
+  &:hover, &:focus {
+    border-color: #4973FF;
+    box-shadow: 0px 5px 4px rgba(73, 115, 255, 0.5);
+  }
+}
+textarea {
+  &:hover, &:focus {
+    border-color: #4973FF;
+    box-shadow: 0px 0px 4px rgba(73, 115, 255, 0.5);
+  }
+}
+select {
+  &:hover, &:focus {
+    box-shadow: 0px 0px 5px rgba(73, 115, 255, 0.5);
+  }
+}

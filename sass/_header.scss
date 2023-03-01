@@ -1,0 +1,129 @@
+@use "variable" as var;
+
+#header {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 83px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  @include var.mq('sp') {
+    height: 68px;
+    background-color: #fff;
+  }
+}
+
+.header-list {
+  display: flex;
+  justify-content: center;
+  font-family: var.$font-en;
+  @include var.mq('sp') {
+    display: none;
+  }
+  li {
+    & + li {
+      margin-left: 40px;
+    }
+    a {
+      line-height: 83px;
+      transition: all 0.3s ease 0s;
+      letter-spacing: -0.4px;
+      &:hover {
+        border-bottom: 1px solid var.$color-main;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.header-logo {
+  width: 160px;
+  display: none;
+  @include var.mq('sp') {
+    display: block;
+  }
+  a {
+    font-size: 23px;
+    line-height: 68px;
+    display: block;
+    font-family: var.$font-en;
+  }
+}
+
+
+
+.drawer-icon {
+  position: fixed;
+  top: 24px;
+  right: 22px;
+  width: 26px;
+  height: 20px;
+  display: none;
+  cursor: pointer;
+  z-index: 200;
+  background: url(../img/sp/hamburger.png) no-repeat center center / contain;
+  transition: transform 0.3s ease 0s;
+  @include var.mq('sp') {
+    display: block;
+  }
+
+  &.is-active {
+    background: url(../img/sp/batsu.png) no-repeat center center / contain;
+    width: 21px;
+    height: 21px;
+    transform: translateX(-300px);
+  }
+}
+
+.drawer-content {
+  width: 300px;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 199;
+  transform: translateX(105%);
+  transition: transform 0.3s ease 0s;
+
+  &.is-active {
+    transform: translateX(0);
+  }
+}
+.drawer-list {
+  text-align: center;
+  padding-top: 160px;
+  li {
+    & + li {
+      margin-top: 27px;
+    }
+    a {
+      font-size: 18px;
+      font-family: var.$font-en;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      &:hover {
+        border-bottom: 1px solid var.$color-main;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.drawer-background {
+  background: var.$color-main;
+  opacity: 0.7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 198;
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}

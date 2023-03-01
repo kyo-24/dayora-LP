@@ -1,0 +1,130 @@
+@use "variable" as var;
+
+#footer {
+  background: var.$color-main;
+  color: #fff;
+  padding: 60px 40px;
+  @include var.mq('sp') {
+    padding: 60px 0;
+  }
+}
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  @include var.mq('sp') {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+.footer-sns {
+  display: flex;
+  @include var.mq('sp') {
+    justify-content: center;
+  }
+}
+.footer-sns-icon {
+  & + & {
+    margin-left: 32px;
+    @include var.mq('sp') {
+      margin-left: 50px;
+    }
+  }
+  i {
+    font-size: 36px;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s ease 0s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.footer-list {
+  margin-top: 40px;
+  li {
+    line-height: 1;
+    & + li {
+      margin-top: 24px;
+      @include var.mq('sp') {
+        margin-top: 26px;
+      }
+    }
+    a {
+      display: block;
+      letter-spacing: 0.4px;
+      transition: opacity 0.3s ease 0s;
+      opacity: 0.6;
+      @include var.mq('sp') {
+        letter-spacing: 0.35px;
+        font-size: 14px;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.footer-right {
+  text-align: right;
+  @include var.mq('sp') {
+    margin-top: 40px;
+    text-align: center;
+  }
+}
+
+.footer-logo {
+  font-size: 40px;
+  line-height: 1;
+  @include var.mq('sp') {
+    font-size: 32px;
+  }
+
+  a {
+    font-family: var.$font-en;
+    color: #E3E3E3;
+    display: block;
+  }
+}
+
+.copyright {
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  margin-top: 16px;
+  opacity: 0.6;
+  font-family: var.$font-en;
+}
+
+
+.to-top {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 43px;
+  right: 45px;
+  z-index: 100;
+  cursor: pointer;
+  display: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease 0s;
+  @include var.mq('sp') {
+    bottom: 17px;
+    right: 22px;
+  }
+  img {
+    display: block;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.is-show {
+    display: block;
+  }
+}

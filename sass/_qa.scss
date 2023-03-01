@@ -1,0 +1,103 @@
+@use "variable" as var;
+
+#qa {
+  margin-top: 120px;
+  padding: 60px 0 120px;
+  background: url(../img/qa-bg.png) no-repeat center top / cover;
+  @include var.mq('sp') {
+    margin-top: 60px;
+    padding: 40px 0 60px; 
+  }
+}
+
+.qa-items {
+  width: 51%;
+  margin-left: auto;
+  margin-top: 52px;
+  @include var.mq('sp') {
+    width: 100%;
+    margin-top: 32px;
+    margin-left: 0;
+  }
+}
+
+
+.qa-item {
+  width: 100%;
+  background: #fff;
+  border-radius: 4px;
+  padding: 16px;
+  & + & {
+    margin-top: 31px;
+    @include var.mq('sp') {
+      margin-top: 24px;
+    }
+  }
+
+  &:nth-child(n + 3) {
+    .qa-box_a {
+      display: none;
+    }
+  }
+
+}
+
+.qa-box_q {
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  padding-left: 40px;
+  position: relative;
+  cursor: pointer;
+
+
+  &::before {
+    content: "Q";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: #3B69FF;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    font-family: var.$font-en;
+    font-weight: bold;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: url(../img/plus.png) no-repeat center center / contain;
+    transition: all 0.5s ease 0s;
+  }
+
+  &.is-open::after {
+    background: url(../img/minus.png) no-repeat center center / contain;
+  }
+}
+
+
+.qa-box_a {
+  background: rgba(59, 105, 255, 0.2);
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-top: 16px;
+  @include var.mq('sp') {
+    padding: 8px 12px;
+  }
+}
+
+.qa-text {
+  @include var.mq('sp') {
+    font-size: 14px;
+    line-height: (20 / 14);
+  }
+}
+

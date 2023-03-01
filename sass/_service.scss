@@ -1,0 +1,93 @@
+@use "variable" as var;
+
+#service {
+  padding-bottom: 215px;
+  @include var.mq('sp') {
+    padding-bottom: 390px;
+  }
+}
+
+.service-inner {
+  width: 100%;
+  height: 400px;
+  background: var.$color-main;
+  @include var.mq('sp') {
+    height: 480px;
+  }
+}
+
+.service-title {
+  padding-top: 60px;
+  color: #fff;
+  @include var.mq('sp') {
+    padding-top: 40px;
+  }
+}
+
+.service-box {
+  max-width: 960px;
+  margin: 60px auto 0;
+  background: #fff;
+  padding: 60px 45px;
+  box-shadow: 0 5px 12px rgba(62, 62, 62, 0.2);
+  @include var.mq('sp') {
+    margin-top: 34px;
+    padding: 40px 16px;
+  }
+}
+.service-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include var.mq('sp') {
+    flex-direction: column;
+  }
+}
+.service-item {
+  text-align: center;
+  max-width: 230px;
+  cursor: pointer;
+  transition: transform 0.3s ease 0s;
+  @include var.mq('sp') {
+    max-width: 100%;
+  }
+  & + & {
+    @include var.mq('sp') {
+      margin-top: 40px;
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+.service-item-img {
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  img {
+    object-fit: cover;
+  }
+}
+.service-head {
+  font-size: 20px;
+  letter-spacing: 4px;
+  line-height: (28 / 20);
+  margin-top: 8px;
+  font-family: var.$font-en;
+  @include var.mq('sp') {
+    line-height: (24 / 20);
+  }
+}
+.service-text {
+  font-size: 14px;
+  line-height: (24 /14);
+  margin-top: 20px;
+  text-align: left;
+  @include var.mq('sp') {
+    margin-top: 17px;
+  }
+}

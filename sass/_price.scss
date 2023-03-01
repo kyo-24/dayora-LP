@@ -1,0 +1,59 @@
+@use "variable" as var;
+
+#price {
+  padding: 120px 0 120px;
+  @include var.mq('sp') {
+    padding: 40px 0 60px;
+  }
+}
+.price-table-box {
+  max-width: 960px;
+  margin: 52px auto 0;
+  @include var.mq('sp') {
+    margin-top: 32px;
+  }
+}
+.price-table {
+  width: 100%;
+  border: 1px solid #707070;
+  border-collapse: collapse;
+}
+.price-table-item {
+  height: 60px;
+  border: 1px solid #707070;
+  @include var.mq('sp') {
+    height: 56px;
+  }
+  th {
+    width: 260px;
+    color: #fff;
+    background-color: var.$color-main;
+    font-size: 24px;
+    font-family: var.$font-en;
+    @include var.mq('sp') {
+      width: 100px;
+      font-size: 20px;
+    }
+  }
+  td {
+    width: calc(100% - 260px);
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 40px;
+    font-family: var.$font-en;
+    @include var.mq('sp') {
+      width: calc(100% - 100px);
+      font-size: 20px;
+      padding-left: 20px;
+    }
+  }
+}
+
+.price-table-text {
+  font-size: 12px;
+  margin-top: 12px;
+  line-height: 1;
+  @include var.mq('sp') {
+    margin-top: 7px;
+  }
+}

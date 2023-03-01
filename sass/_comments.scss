@@ -1,0 +1,85 @@
+@use "variable" as var;
+
+#comments {
+  position: relative;
+
+}
+.comments-bg {
+  width: 77%;
+  height: 576px;
+  background-color: var.$color-main;
+  position: absolute;
+  bottom: -120px;
+  left: 0;
+  z-index: -1;
+  @include var.mq('sp') {
+    height: 100%;
+    width: 100%;
+    bottom: -60px;
+  }
+
+}
+.comments-inner {
+  display: flex;
+  align-items: center;
+}
+.comments-box {
+  background: #fff;
+  padding: 120px 60px;
+  width: 56%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+  @include var.mq('sp') {
+    width: 100%;
+    padding: 40px 20px;
+  }
+}
+.comments-title {
+  text-align: left;
+}
+.comments-items {
+  margin-top: 48px;
+  @include var.mq('sp') {
+    margin-top: 30px;
+  }
+
+}
+.comments-item {
+  display: flex;
+  & + & {
+    margin-top: 60px;
+    @include var.mq('sp') {
+      margin-top: 30px;
+    }
+  }
+}
+.comments-img {
+  width: 132px;
+  height: 100px;
+  padding-right: 32px;
+  @include var.mq('sp') {
+    width: 80px;
+    height: 60px;
+    padding-right: 20px;
+  }
+  img {
+    width: 100%;
+  }
+}
+.comments-text {
+  width: calc(100% - 132px);
+  line-height: (24 / 16);
+  @include var.mq('sp') {
+    width: calc(100% - 80px);
+    font-size: 14px;
+    line-height: (20 /14);
+  }
+}
+.comments-vis {
+  width: 45%;
+  @include var.mq('sp') {
+    display: none;
+  }
+  img {
+    width: 100%;
+  }
+}

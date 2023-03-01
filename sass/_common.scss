@@ -1,0 +1,106 @@
+@use "variable" as var;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
+
+html {
+  font-size: 100%;
+}
+body {
+  background-color: var.$color-background;
+  color: var.$color-main;
+  font-size: 16px;
+  font-family: var.$font-ja;
+  line-height: (24 / 16);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+li {
+  list-style: none;
+}
+
+.inner {
+  max-width: var.$layout-width-inner;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @include var.mq('sp') {
+    padding: 0 16px;
+  }
+}
+
+.yellow-btn {
+  color: #fff;
+  background-color: var.$color-btn;
+  padding: 16px 50px;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 10px;
+  line-height: 1;
+  transition: background-color 0.3s ease 0s;
+  box-shadow: 0 3px 5px rgba(62, 62, 62, 0.2);
+  @include var.mq('sp') {
+    font-size: 16px;
+  }
+  &:hover {
+    background-color: #F18900;
+  }
+}
+
+.section-title {
+  text-align: center;
+  font-family: var.$font-en;
+  font-size: 36px;
+  @include var.mq('sp') {
+    font-size: 30px;
+  }
+}
+
+.is-sp {
+  display: none;
+  @include var.mq('sp') {
+    display: block;
+  }
+}
+
+.btn {
+  letter-spacing: 4px;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  font-family: var.$font-en;
+  line-height: 1;
+  @include var.mq('sp') {
+    font-size: 18px;
+  }
+}
+
+.white-btn {
+  border: 1px solid #707070;
+  transition: all 0.3s ease 0s;
+  &:hover {
+    border: 1px solid #fff;
+    color: #fff;
+    background: var.$color-main;
+  }
+}
+.black-btn {
+  background: var.$color-main;
+  color: #fff;
+  border: 1px solid #FFFFFF;
+  transition: all 0.3s ease 0s;
+  &:hover {
+    border: 1px solid #707070;
+    background: #fff;
+    color: var.$color-main;
+  }
+}

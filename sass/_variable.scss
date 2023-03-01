@@ -1,0 +1,30 @@
+// 色
+$color-main: #3E3E3E;
+$color-blue: #3B69FF;
+$color-red:#FF4646;
+$color-btn:#FFAA3B;
+$color-background: #F3F3F3;
+
+
+// フォント
+$font-en: "Montserrat";
+$font-ja: "游ゴシック体", "游ゴシック", "Yu Gothic", sans-serif;
+
+
+// インナー幅
+$layout-width-inner: 1280px;
+
+
+
+// メディアクエリー
+$breakpoints: (
+//キー : 値
+  'sp': "(max-width: 767px)", 
+  'pc': "(min-width: 768px)"
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
